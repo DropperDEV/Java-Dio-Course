@@ -1,3 +1,5 @@
+package edu.james.sintaxe;
+
 public class JuntaNomes {
 
     public static void main(String [] args){
