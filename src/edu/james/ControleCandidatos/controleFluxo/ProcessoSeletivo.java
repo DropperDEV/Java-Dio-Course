@@ -1,4 +1,4 @@
-package edu.james.ControleCandidatos.candidatura;
+package edu.james.ControleCandidatos.controleFluxo;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
