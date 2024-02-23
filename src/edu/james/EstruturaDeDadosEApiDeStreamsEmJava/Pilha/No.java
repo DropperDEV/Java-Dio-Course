@@ -20,8 +20,8 @@ public class No {
         return refNo;
     }
 
-    public void setRefNo(No reNo) {
-        this.refNo = reNo;
+    public void setRefNo(No refNo) {
+        this.refNo = refNo;
     }
 
     @Override
