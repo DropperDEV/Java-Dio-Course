@@ -15,9 +15,10 @@ public class ListaEncadeada<T> {
             return;
         }
         No<T> noAuxiliar = referenciaEntrada;
-        for (int i = 0; i<this.size();i++){
+        while (noAuxiliar.getProximoNo() != null) {
             noAuxiliar = noAuxiliar.getProximoNo();
         }
+
         noAuxiliar.setProximoNo(novoNo);
     }
 
