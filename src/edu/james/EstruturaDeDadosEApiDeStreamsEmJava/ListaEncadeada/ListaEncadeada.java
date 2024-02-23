@@ -32,6 +32,10 @@ public class ListaEncadeada<T> {
         return noRetorno;
     }
 
+    public T get(int index){
+        return getNo(index).getConteudo();
+    }
+
     public int size(){
         int tamanhoLista = 0;
         No<T> referenciaAux = referenciaEntrada;
