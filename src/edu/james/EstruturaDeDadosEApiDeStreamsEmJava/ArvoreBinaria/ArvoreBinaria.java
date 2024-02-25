@@ -1,40 +1,45 @@
 package edu.james.EstruturaDeDadosEApiDeStreamsEmJava.ArvoreBinaria;
+;
 
-public class ArvoreBinaria<T extends  Comparable<T>>{
+public class ArvoreBinaria<T extends Comparable<T>> {
+
     private BinNo<T> raiz;
+
     public ArvoreBinaria(){
-        this.raiz=null;
+        this.raiz = null;
     }
 
     public void inserir(T conteudo){
         BinNo<T> novoNo = new BinNo<>(conteudo);
-        raiz = inserir(raiz,novoNo);
+        raiz = inserir(raiz, novoNo);
     }
 
-    private BinNo<T> inserir(BinNo<T> atual,BinNo<T>  novoNo){
+    private BinNo<T> inserir(BinNo<T> atual, BinNo<T> novoNo){
         if(atual == null){
             return novoNo;
         }else if(novoNo.getConteudo().compareTo(atual.getConteudo()) < 0){
-            atual.setNoEsq(inserir(atual.getNoEsq(),novoNo));
-        } else{
-            atual.setNoDir(inserir(atual.getNoDir(),novoNo));
-        } return atual;
+            atual.setNoEsq(inserir(atual.getNoEsq(), novoNo));
+        }else{
+            atual.setNoDir(inserir(atual.getNoDir(), novoNo));
+        }
+        return atual;
     }
 
     public void exibirInOrdem(){
-        System.out.println("\n Exibindo em ordem");
-        exbiriInOrdem(this.raiz);
+        System.out.println("\n Exibindo InOrdem");
+        exibirInOrdem(this.raiz);
     }
 
-    private void exbiriInOrdem(BinNo<T> atual){
+    private void exibirInOrdem(BinNo<T> atual){
         if(atual != null){
-            exbiriInOrdem(atual.getNoEsq());
-            System.out.println(atual.getConteudo() + ", ");
-            exbiriInOrdem(atual.getNoDir());
+            exibirInOrdem(atual.getNoEsq());
+            System.out.print(atual.getConteudo() + ", ");
+            exibirInOrdem(atual.getNoDir());
         }
     }
+
     public void exibirPosOrdem(){
-        System.out.println("\n Exibindo em pos ordem");
+        System.out.println("\n Exibindo PosOrdem");
         exibirPosOrdem(this.raiz);
     }
 
@@ -42,17 +47,18 @@ public class ArvoreBinaria<T extends  Comparable<T>>{
         if(atual != null){
             exibirPosOrdem(atual.getNoEsq());
             exibirPosOrdem(atual.getNoDir());
-            System.out.println(atual.getConteudo() + ", ");
+            System.out.print(atual.getConteudo() + ", ");
         }
     }
+
     public void exibirPreOrdem(){
-        System.out.println("\n Exibindo em pre ordem");
+        System.out.println("\n Exibindo PreOrdem");
         exibirPreOrdem(this.raiz);
     }
 
     private void exibirPreOrdem(BinNo<T> atual){
         if(atual != null){
-            System.out.println(atual.getConteudo() + ", ");
+            System.out.print(atual.getConteudo() + ", ");
             exibirPreOrdem(atual.getNoEsq());
             exibirPreOrdem(atual.getNoDir());
         }
@@ -130,4 +136,5 @@ public class ArvoreBinaria<T extends  Comparable<T>>{
             System.out.println("Conteudo nao encontrado. Bloco Catch");
         }
     }
+
 }
