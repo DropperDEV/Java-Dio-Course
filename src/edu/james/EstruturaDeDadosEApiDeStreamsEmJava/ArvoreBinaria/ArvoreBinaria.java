@@ -20,4 +20,67 @@ public class ArvoreBinaria<T extends  Comparable<T>>{
             atual.setNoDir(inserir(atual.getNoDir(),novoNo));
         } return atual;
     }
+
+    public void exibirInOrdem(){
+        System.out.println("\n Exibindo em ordem");
+        exbiriInOrdem(this.raiz);
+    }
+
+    private void exbiriInOrdem(BinNo<T> atual){
+        if(atual != null){
+            exbiriInOrdem(atual.getNoEsq());
+            System.out.println(atual.getConteudo() + ", ");
+            exbiriInOrdem(atual.getNoDir());
+        }
+    }
+    public void exibirPosOrdem(){
+        System.out.println("\n Exibindo em pos ordem");
+        exibirPosOrdem(this.raiz);
+    }
+
+    private void exibirPosOrdem(BinNo<T> atual){
+        if(atual != null){
+            exibirPosOrdem(atual.getNoEsq());
+            exibirPosOrdem(atual.getNoDir());
+            System.out.println(atual.getConteudo() + ", ");
+        }
+    }
+    public void exibirPreOrdem(){
+        System.out.println("\n Exibindo em pre ordem");
+        exibirPreOrdem(this.raiz);
+    }
+
+    private void exibirPreOrdem(BinNo<T> atual){
+        if(atual != null){
+            System.out.println(atual.getConteudo() + ", ");
+            exibirPreOrdem(atual.getNoEsq());
+            exibirPreOrdem(atual.getNoDir());
+        }
+    }
+
+    public void remover(T conteudo){
+        try{
+            BinNo<T> atual = this.raiz;
+            BinNo<T> pai = null;
+            BinNo<T> filho = null;
+            BinNo<T> temp = null;
+
+            while (atual != null && !atual.getConteudo().equals(conteudo)){
+                pai = atual;
+                if(conteudo.compareTo(atual.getConteudo()) < 0){
+                    atual = atual.getNoEsq();
+                }else {
+                    atual = atual.getNoDir();
+                }
+            }
+
+            if(atual == null){
+                System.out.println("Conteudo nao encontrado. Bloco Try");
+            }
+
+
+        }catch (NullPointerException erro){
+            System.out.println("Conteudo nao encontrado. Bloco Catch");
+        }
+    }
 }
