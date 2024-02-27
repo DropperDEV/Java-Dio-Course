@@ -1,6 +1,6 @@
 package edu.james.EstruturaDeDadosEApiDeStreamsEmJava.EstruturasUsuais.Stack;
 
-import edu.james.EstruturaDeDadosEApiDeStreamsEmJava.EqualsHashCode.Carro;
+import edu.james.EstruturaDeDadosEApiDeStreamsEmJava.EstruturasUsuais.EqualsHashCode.Carro;
 
 import java.util.Stack;
 

@@ -1,4 +1,4 @@
-package edu.james.EstruturaDeDadosEApiDeStreamsEmJava.EqualsHashCode;
+package edu.james.EstruturaDeDadosEApiDeStreamsEmJava.EstruturasUsuais.EqualsHashCode;
 
 import java.util.ArrayList;
 import java.util.List;

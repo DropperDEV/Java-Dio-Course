@@ -1,4 +1,4 @@
-package edu.james.EstruturaDeDadosEApiDeStreamsEmJava.EqualsHashCode;
+package edu.james.EstruturaDeDadosEApiDeStreamsEmJava.EstruturasUsuais.EqualsHashCode;
 
 import java.util.Objects;
 
@@ -29,6 +29,16 @@ public class Carro {
     public int hashCode() {
         return Objects.hash(marca);
     }
+
+    @Override
+    public  int compareTo(Carro o){
+        if(this.marca.length() < o.marca.length()){
+            return -1;
+        } else if(this.marca.length() > o.marca.length()){
+            return 1;
+        } return 0;
+    }
+
 }
 
 
